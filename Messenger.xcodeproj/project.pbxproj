@@ -13,6 +13,12 @@
 		1544FF3A27C587DD00F25C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1544FF3827C587DD00F25C6B /* Main.storyboard */; };
 		1544FF3C27C587DF00F25C6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1544FF3B27C587DF00F25C6B /* Assets.xcassets */; };
 		1544FF3F27C587DF00F25C6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1544FF3D27C587DF00F25C6B /* LaunchScreen.storyboard */; };
+		1544FF4D27C58A2B00F25C6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF4C27C58A2B00F25C6B /* LoginViewController.swift */; };
+		1544FF4F27C58A3800F25C6B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF4E27C58A3800F25C6B /* RegisterViewController.swift */; };
+		1544FF5127C58A5800F25C6B /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5027C58A5800F25C6B /* PhotoViewerViewController.swift */; };
+		1544FF5327C58A6000F25C6B /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5227C58A6000F25C6B /* VideoPlayerViewController.swift */; };
+		1544FF5527C58A8100F25C6B /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5427C58A8000F25C6B /* NewConversationViewController.swift */; };
+		1544FF5727C58A8F00F25C6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		1544FF3B27C587DF00F25C6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1544FF3E27C587DF00F25C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1544FF4027C587DF00F25C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1544FF4C27C58A2B00F25C6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1544FF4E27C58A3800F25C6B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1544FF5027C58A5800F25C6B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		1544FF5227C58A6000F25C6B /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		1544FF5427C58A8000F25C6B /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				1544FF3627C587DD00F25C6B /* ConversationsViewController.swift */,
+				1544FF4C27C58A2B00F25C6B /* LoginViewController.swift */,
+				1544FF4E27C58A3800F25C6B /* RegisterViewController.swift */,
+				1544FF5027C58A5800F25C6B /* PhotoViewerViewController.swift */,
+				1544FF5227C58A6000F25C6B /* VideoPlayerViewController.swift */,
+				1544FF5427C58A8000F25C6B /* NewConversationViewController.swift */,
+				1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,9 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1544FF4D27C58A2B00F25C6B /* LoginViewController.swift in Sources */,
+				1544FF4F27C58A3800F25C6B /* RegisterViewController.swift in Sources */,
+				1544FF5527C58A8100F25C6B /* NewConversationViewController.swift in Sources */,
 				1544FF3727C587DD00F25C6B /* ConversationsViewController.swift in Sources */,
+				1544FF5327C58A6000F25C6B /* VideoPlayerViewController.swift in Sources */,
 				1544FF3327C587DD00F25C6B /* AppDelegate.swift in Sources */,
+				1544FF5727C58A8F00F25C6B /* ProfileViewController.swift in Sources */,
 				1544FF3527C587DD00F25C6B /* SceneDelegate.swift in Sources */,
+				1544FF5127C58A5800F25C6B /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +366,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,6 +394,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
