@@ -168,15 +168,31 @@ class RegisterViewController: UIViewController {
                 strongSelf.alertUserLoginError(message: "User already exists")
                 return
             }
-        }
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in
-            guard let strongSelf = self else { return }
-            guard result != nil , error == nil else {
-                print("Error creating user")
-                return }
-            let user = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
-            DatabaseManager.shared.insertUser(with: user)
-            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in
+                guard let strongSelf = self else { return }
+                guard result != nil , error == nil else {
+                    print("Error creating user")
+                    return }
+                let user = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                DatabaseManager.shared.insertUser(with: user) { success in
+                    if success {
+                        //upload image
+                        guard let image = strongSelf.imageView.image,
+                              let data = image.pngData() else { return }
+                        let filename = user.profilePictureFileName
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename) { result in
+                            switch result {
+                            case .success(let downloadUrl) :
+                                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                print(downloadUrl)
+                            case .failure(let error) :
+                                print("Storage manager error : \(error)")
+                            }
+                        }
+                    }
+                }
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

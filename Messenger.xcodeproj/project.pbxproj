@@ -21,6 +21,7 @@
 		1544FF5727C58A8F00F25C6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */; };
 		1544FF5A27C58EA600F25C6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1544FF5927C58EA600F25C6B /* Extensions.swift */; };
 		1544FF5C27C61F4F00F25C6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1544FF5B27C61F4F00F25C6B /* GoogleService-Info.plist */; };
+		1573E93E27C7CFEE009A6574 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573E93D27C7CFEE009A6574 /* StorageManager.swift */; };
 		15DA012527C6810800E5CA71 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DA012427C6810800E5CA71 /* DatabaseManager.swift */; };
 		15DA012727C6C56500E5CA71 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DA012627C6C56500E5CA71 /* ChatViewController.swift */; };
 		20E7B276D20B1CC83E297EC3 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC0F6207282E8755C47C8BA /* Pods_Messenger.framework */; };
@@ -43,6 +44,7 @@
 		1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1544FF5927C58EA600F25C6B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1544FF5B27C61F4F00F25C6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1573E93D27C7CFEE009A6574 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		15DA012427C6810800E5CA71 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		15DA012627C6C56500E5CA71 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2FC0F6207282E8755C47C8BA /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				1544FF3427C587DD00F25C6B /* SceneDelegate.swift */,
 				1544FF5927C58EA600F25C6B /* Extensions.swift */,
 				15DA012427C6810800E5CA71 /* DatabaseManager.swift */,
+				1573E93D27C7CFEE009A6574 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				1544FF3527C587DD00F25C6B /* SceneDelegate.swift in Sources */,
 				15DA012727C6C56500E5CA71 /* ChatViewController.swift in Sources */,
 				1544FF5127C58A5800F25C6B /* PhotoViewerViewController.swift in Sources */,
+				1573E93E27C7CFEE009A6574 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
