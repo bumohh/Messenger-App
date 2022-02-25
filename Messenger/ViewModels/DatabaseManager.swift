@@ -13,7 +13,11 @@ final class DatabaseManager {
     private init() {}
     private let database = Database.database().reference()
     
-    
+    static func safeEmail(email: String) -> String {
+        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        return safeEmail
+    }
 }
 // MARK: - Account Management
 extension DatabaseManager {
@@ -53,7 +57,7 @@ struct ChatAppUser {
     }
     
     var profilePictureFileName : String {
-        "emailname-gmail-com_profile_picture.png"
+        //"emailname-gmail-com_profile_picture.png"
         return "\(safeEmail)_profile_picture.png"
     }
 }

@@ -86,7 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				1544FF5B27C61F4F00F25C6B /* GoogleService-Info.plist */,
-				1544FF4A27C588B300F25C6B /* Resources */,
+				1544FF3227C587DD00F25C6B /* AppDelegate.swift */,
+				1544FF3427C587DD00F25C6B /* SceneDelegate.swift */,
+				1544FF4A27C588B300F25C6B /* Extension */,
 				1544FF4927C588A600F25C6B /* ViewModels */,
 				1544FF4827C5889400F25C6B /* Models */,
 				1544FF4727C5888D00F25C6B /* Views */,
@@ -99,13 +101,11 @@
 		1544FF4627C5888200F25C6B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1544FF3627C587DD00F25C6B /* ConversationsViewController.swift */,
+				1573E94127C92748009A6574 /* Profile */,
+				1573E94027C92724009A6574 /* Chat */,
 				1544FF5827C58B4600F25C6B /* Login */,
-				1544FF5027C58A5800F25C6B /* PhotoViewerViewController.swift */,
-				1544FF5227C58A6000F25C6B /* VideoPlayerViewController.swift */,
-				1544FF5427C58A8000F25C6B /* NewConversationViewController.swift */,
-				1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */,
-				15DA012627C6C56500E5CA71 /* ChatViewController.swift */,
+				1573E93F27C926FB009A6574 /* Register */,
+				1573E94227C9278D009A6574 /* Media */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,20 +129,18 @@
 		1544FF4927C588A600F25C6B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				15DA012427C6810800E5CA71 /* DatabaseManager.swift */,
+				1573E93D27C7CFEE009A6574 /* StorageManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		1544FF4A27C588B300F25C6B /* Resources */ = {
+		1544FF4A27C588B300F25C6B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1544FF3227C587DD00F25C6B /* AppDelegate.swift */,
-				1544FF3427C587DD00F25C6B /* SceneDelegate.swift */,
 				1544FF5927C58EA600F25C6B /* Extensions.swift */,
-				15DA012427C6810800E5CA71 /* DatabaseManager.swift */,
-				1573E93D27C7CFEE009A6574 /* StorageManager.swift */,
 			);
-			path = Resources;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		1544FF4B27C588D500F25C6B /* Storyboards */ = {
@@ -158,9 +156,43 @@
 			isa = PBXGroup;
 			children = (
 				1544FF4C27C58A2B00F25C6B /* LoginViewController.swift */,
-				1544FF4E27C58A3800F25C6B /* RegisterViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		1573E93F27C926FB009A6574 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				1544FF4E27C58A3800F25C6B /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		1573E94027C92724009A6574 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1544FF3627C587DD00F25C6B /* ConversationsViewController.swift */,
+				15DA012627C6C56500E5CA71 /* ChatViewController.swift */,
+				1544FF5427C58A8000F25C6B /* NewConversationViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1573E94127C92748009A6574 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1544FF5627C58A8F00F25C6B /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1573E94227C9278D009A6574 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				1544FF5027C58A5800F25C6B /* PhotoViewerViewController.swift */,
+				1544FF5227C58A6000F25C6B /* VideoPlayerViewController.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		AD87EDCD9553D7263C94F9FD /* Frameworks */ = {
