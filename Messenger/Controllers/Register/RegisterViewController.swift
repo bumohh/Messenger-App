@@ -98,7 +98,6 @@ class RegisterViewController: UIViewController {
     private let registerButton : UIButton = {
         let button = UIButton()
         button.setTitle("Register", for: .normal)
-        button.backgroundColor = UIColor.darkerColorForColor(color: .green)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
@@ -108,8 +107,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Register"
-        view.backgroundColor = .green
-        
+        view.backgroundColor = .systemMint
+        registerButton.backgroundColor = UIColor.darkerColorForColor(color: view.backgroundColor ?? UIColor.white)
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         emailField.delegate = self
         passwordField.delegate = self
