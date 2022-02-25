@@ -86,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				1544FF5B27C61F4F00F25C6B /* GoogleService-Info.plist */,
+				1544FF4027C587DF00F25C6B /* Info.plist */,
 				1544FF3227C587DD00F25C6B /* AppDelegate.swift */,
 				1544FF3427C587DD00F25C6B /* SceneDelegate.swift */,
 				1544FF4A27C588B300F25C6B /* Extension */,
@@ -93,7 +94,6 @@
 				1544FF4827C5889400F25C6B /* Models */,
 				1544FF4727C5888D00F25C6B /* Views */,
 				1544FF4627C5888200F25C6B /* Controllers */,
-				1544FF4027C587DF00F25C6B /* Info.plist */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
