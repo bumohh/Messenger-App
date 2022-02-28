@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseDatabase
+import MessageKit
 
 final class DatabaseManager {
     static let shared = DatabaseManager()
@@ -333,8 +334,23 @@ extension DatabaseManager {
                       let date = ChatViewController.dateFormatter.date(from: dateString) else {
                           return nil
                       }
+                var kind : MessageKind?
+                if type == "photo" {
+                    //photo
+                    guard let imageUrl = URL(string: content),
+                          let placeholder = UIImage(systemName: "plus") else { return nil }
+                    let media = Media(url: imageUrl,
+                                      image: nil,
+                                      placeholderImage: placeholder,
+                                      size: CGSize(width: 300, height: 300))
+                    kind = .photo(media)
+                } else {
+                    //text
+                    kind = .text(content)
+                }
+                guard let finalKind = kind else { return nil }
                 let sender = Sender(photoURL: "", senderId: senderEmail, displayName: name)
-                return Message(sender: sender, messageId: messageID, sentDate: date, kind: .text(content))
+                return Message(sender: sender, messageId: messageID, sentDate: date, kind: finalKind)
             })
             
             print("messages fetched : ", messages)
@@ -348,6 +364,7 @@ extension DatabaseManager {
         //update recipient latest message
         guard let myEmail = UserDefaults.standard.value(forKey: "email") as? String else { completion(false);return }
         let currentEmail = DatabaseManager.safeEmail(email: myEmail)
+        
         self.database.child("\(conversation)/messages").observeSingleEvent(of: .value) {[weak self] snapshot in
             guard let strongSelf = self else { return }
             guard var currentMessages = snapshot.value as? [[String: Any]] else { completion(false);return}
@@ -359,7 +376,12 @@ extension DatabaseManager {
             case .text(let messageText):
                 message = messageText
                 print("messageText: ", messageText)
-            case .attributedText(_), .photo(_), .video(_), .location(_), .emoji(_), .audio(_), .contact(_),.custom(_), .linkPreview(_):
+            case .photo(let mediaItem) :
+                if let targetUrlString = mediaItem.url?.absoluteString {
+                    message = targetUrlString
+                }
+                break
+            case .attributedText(_), .video(_), .location(_), .emoji(_), .audio(_), .contact(_),.custom(_), .linkPreview(_):
                 break
             }
             guard let myEmail = UserDefaults.standard.value(forKey: "email") as? String else { completion(false); return }
