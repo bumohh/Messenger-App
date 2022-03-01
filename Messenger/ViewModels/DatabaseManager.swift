@@ -381,7 +381,12 @@ extension DatabaseManager {
                     message = targetUrlString
                 }
                 break
-            case .attributedText(_), .video(_), .location(_), .emoji(_), .audio(_), .contact(_),.custom(_), .linkPreview(_):
+            case .video(let mediaItem) :
+                if let targetUrlString = mediaItem.url?.absoluteString {
+                    message = targetUrlString
+                }
+                break
+            case .attributedText(_), .location(_), .emoji(_), .audio(_), .contact(_),.custom(_), .linkPreview(_):
                 break
             }
             guard let myEmail = UserDefaults.standard.value(forKey: "email") as? String else { completion(false); return }

@@ -25,27 +25,27 @@
 			</array>
 		</dict>
 	</dict>
-    
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb998815760720289</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>998815760720289</string>
-    <key>FacebookClientToken</key>
-    <string>de3b8781b8ae78f30e5835497f807c41</string>
-    <key>FacebookDisplayName</key>
-    <string>Messenger</string>
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb998815760720289</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>998815760720289</string>
+	<key>FacebookClientToken</key>
+	<string>de3b8781b8ae78f30e5835497f807c41</string>
+	<key>FacebookDisplayName</key>
+	<string>Messenger</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please allow access to send audio and video messages.</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 </dict>
 </plist>
