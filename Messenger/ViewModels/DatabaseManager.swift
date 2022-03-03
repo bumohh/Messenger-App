@@ -445,7 +445,7 @@ extension DatabaseManager {
                             "is_read": false
                         ]
                         
-                        var targetConversation : [String: Any]?
+                        var targetConversation : [String: Any]? = [:]
                         
                         var position = 0
                         
@@ -460,7 +460,7 @@ extension DatabaseManager {
                         targetConversation?["latest_message"] = updatedValue
                         guard let finalConversation = targetConversation else { completion(false);return }
                         
-                        otherUserConversations[position] = finalConversation
+                        otherUserConversations[position-1] = finalConversation
                         strongSelf.database.child("\(otherUserEmail)/conversations").setValue(otherUserConversations) { error, _ in
                             guard error == nil else { completion(false); return }
                         }

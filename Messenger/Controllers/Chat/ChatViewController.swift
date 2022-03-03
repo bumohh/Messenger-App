@@ -254,7 +254,6 @@ extension ChatViewController : UIImagePickerControllerDelegate, UINavigationCont
             let filename = "video_message_\(messageId)".replacingOccurrences(of: " " , with: "-") + ". mov"
             
             //Upload Video
-            //NEEDS DEBUG https://www.youtube.com/watch?v=Dal4M9FtJsg
             StorageManager.shared.uploadMessageVideo(with: videoUrl, fileName: filename) { [weak self] result in
                 guard let strongSelf = self else { return }
                 switch result {
