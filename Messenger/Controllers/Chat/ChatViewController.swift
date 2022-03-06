@@ -9,6 +9,8 @@ import UIKit
 import MessageKit
 import InputBarAccessoryView
 import SDWebImage
+import AVFoundation
+import AVKit
 
 struct Message : MessageType {
     public var sender: SenderType
@@ -251,7 +253,7 @@ extension ChatViewController : UIImagePickerControllerDelegate, UINavigationCont
                 }
             }
         } else if let videoUrl = info[.mediaURL] as? URL {
-            let filename = "video_message_\(messageId)".replacingOccurrences(of: " " , with: "-") + ". mov"
+            let filename = "video_message_\(messageId)".replacingOccurrences(of: " " , with: "-") + ".mov"
             
             //Upload Video
             StorageManager.shared.uploadMessageVideo(with: videoUrl, fileName: filename) { [weak self] result in
@@ -361,6 +363,12 @@ extension ChatViewController : MessageCellDelegate {
             guard let imageUrl = media.url else { return }
             let vc = PhotoViewerViewController(with: imageUrl)
             self.navigationController?.pushViewController(vc, animated: true)
+        case .video(let media):
+            guard let videoUrl = media.url else { return }
+            let vc = AVPlayerViewController()
+            vc.player = AVPlayer(url: videoUrl)
+            present(vc, animated: true)
+            
         default :
             break
         }
