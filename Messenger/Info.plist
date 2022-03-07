@@ -42,6 +42,8 @@
 	<string>Messenger</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Please allow access to send audio and video messages.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

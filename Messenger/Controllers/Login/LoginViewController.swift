@@ -4,7 +4,6 @@
 //
 //  Created by Bruno Gomez on 2/22/22.
 //
-
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
@@ -14,7 +13,6 @@ import JGProgressHUD
 class LoginViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
-    
     private let imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
@@ -36,11 +34,11 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
         field.layer.borderColor = UIColor.lightGray.cgColor
-        field.placeholder = "Email Address..."
-        
+        field.attributedPlaceholder = NSAttributedString(string: "Email Address...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemMint])
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
+        field.textColor = .systemMint
         return field
     }()
     
@@ -52,19 +50,20 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
         field.layer.borderColor = UIColor.lightGray.cgColor
-        field.placeholder = "Password..."
+        field.attributedPlaceholder = NSAttributedString(string: "Password...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemMint])
         field.isSecureTextEntry = true
         
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
+        field.textColor = .systemMint
         return field
     }()
     
     private let loginButton : UIButton = {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
-        button.backgroundColor = .systemMint
+        button.backgroundColor = UIColor.darkerColorForColor(color: .systemMint)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
@@ -91,7 +90,7 @@ class LoginViewController: UIViewController {
             strongSelf.navigationController?.dismiss(animated: true)
         })
         title = "Log In"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemMint
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
