@@ -81,8 +81,15 @@ class LoginViewController: UIViewController {
         button.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
         return button
     }()
+    
+    private var loginObserver : NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLogInNotification, object: nil, queue: .main, using: { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.dismiss(animated: true)
+        })
         title = "Log In"
         view.backgroundColor = .white
         
@@ -102,6 +109,13 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(passwordField)
         scrollView.addSubview(loginButton)
         scrollView.addSubview(loginFBButton)
+    }
+    
+    
+    deinit {
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     override func viewDidLayoutSubviews() {
